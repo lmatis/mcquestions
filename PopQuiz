@@ -1,0 +1,25 @@
+import Questions from Questions
+
+question_prompts: list[str] = [
+    "On what album did For Whom The Bell Tolls appear?\n(a)Beatles' White Album\n(b)Metallica's Black Album\n(c)Barry Manilow's Greatest Hits\n(d)Megadeth's Rust In Peace\n(e)Metallica's Ride The Lightening\n\n" ,
+    "What was Megadeth's Hook In Mouth song about?\n(a)Fishing\n(b)Gingivitis\n(c)The PMRC's attack on heavy metal music\n(d)Peter Pan's arch enemy\n(e)Women\n\n" ,
+    "Which band's departed lead singer led to a dispute with the rights to their name, which resulted in two different bands with the same name for two years?\n(a)Dark Funeral\n(b)Slayer\n(c)REO SPeedwagon\n(d)Queensryche\n(e)Creedance Clearwater Revival\n\n",
+ ]
+questions = [
+    Question(question_prompts[0], "e"),
+    Question(question_prompts[1], "c"),
+    Question(question_prompts[2], "c"),
+]
+
+
+def run_test(questions):
+    score = 0
+    for Question in questions:
+        answer = input(question_prompts)
+        if answer == questions.answer:
+            score += 1
+
+    print("You got " + str(score) + "/" + str(len(questions)) + " correct.")
+
+
+run_test(questions)
